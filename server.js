@@ -3,8 +3,8 @@ var app = express();
 var parser = require('body-parser');
 var path = require('path');
 
-var htmlRoutes = require("./app/routing/htmlRoutes")(app);
-// var apiRoutes = require("./app/routing/apiRoutes")(app);
+require("./app/routing/apiRoutes")(app);
+require("./app/routing/htmlRoutes")(app);
 
 var PORT = 3000;
 
