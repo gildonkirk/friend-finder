@@ -138,6 +138,7 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 <script>
+	var currentUrl = window.location.origin;
 	$('.btn').on('click', function() {
 		event.preventDefault();
 		var newFriend = {
@@ -158,8 +159,6 @@
 		}
 		console.log(newFriend);
 
-		var currentUrl = window.location.origin;
-
 		$.post(currentUrl + '/api/friends', newFriend, function(data) {
 			$('#q1').val('');
 			$('#q2').val('');
@@ -171,8 +170,15 @@
 			$('#q8').val('');
 			$('#q9').val('');
 			$('#q10').val('');
-		});
+		}).done(getFriends());
 	});
+
+	function getFriends() {
+		$.ajax({ url: currentUrl + "/api/friends", method: "GET" })
+		.done(function(friends) {
+			console.log(friends);
+		})
+	}
 </script>
 </body>
 </html>

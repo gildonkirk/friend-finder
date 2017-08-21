@@ -1,13 +1,13 @@
 var path = require('path');
 
-var friendsData = require('../data/friends');
+var friends = require('../data/friends');
 
 module.exports = function(app) {
 	app.get('/api/friends', function(req, res) {
-		res.json(friendsData);
+		res.json(friends);
 	})
 
 	app.post('/api/friends', function(req, res) {
-		friendsData.push(req.body);
+		friends.push(req.body);
 	})
 };
