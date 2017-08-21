@@ -3,15 +3,15 @@ var app = express();
 var parser = require('body-parser');
 var path = require('path');
 
+var htmlRoutes = require("./app/routing/htmlRoutes")(app);
+// var apiRoutes = require("./app/routing/apiRoutes")(app);
+
 var PORT = 3000;
 
-app.get('/survey', function(req, res) {
-	res.sendFile(path.join(__dirname, 'app/public/survey.html'));
-});
-
-app.use(function(req, res) {
-	res.sendFile(path.join(__dirname, 'app/public/home.html'));
-});
+app.use(parser.json());
+app.use(parser.urlencoded({ extended: true }));
+app.use(parser.text());
+app.use(parser.json({ type: "application/vnd.api+json" }));
 
 
 
