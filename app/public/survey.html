@@ -32,7 +32,7 @@
 			</div>
 			<div class="form-group">
 				<label class="questionTitle" for="q2">Question Two</label><br>
-				<label class="question">Do you like Game of Thrones?</label>
+				<label class="question">Do you like comic books?</label>
 				<select class="form-control" id="q2">
 				 	<option>1</option>
 				 	<option>2</option>
@@ -43,7 +43,7 @@
 			</div>
 			<div class="form-group">
 				<label class="questionTitle" for="q3">Question Three</label><br>
-				<label class="question">Do you like Game of Thrones?</label>
+				<label class="question">Do you like video games?</label>
 				<select class="form-control" id="q3">
 				 	<option>1</option>
 				 	<option>2</option>
@@ -54,7 +54,7 @@
 			</div>
 			<div class="form-group">
 				<label class="questionTitle" for="q4">Question Four</label><br>
-				<label class="question">Do you like Game of Thrones?</label>
+				<label class="question">Do you like movies?</label>
 				<select class="form-control" id="q4">
 				 	<option>1</option>
 				 	<option>2</option>
@@ -65,7 +65,7 @@
 			</div>
 			<div class="form-group">
 				<label class="questionTitle" for="q5">Question Five</label><br>
-				<label class="question">Do you like Game of Thrones?</label>
+				<label class="question">Do you like music?</label>
 				<select class="form-control" id="q5">
 				 	<option>1</option>
 				 	<option>2</option>
@@ -76,7 +76,7 @@
 			</div>
 			<div class="form-group">
 				<label class="questionTitle" for="q6">Question Six</label><br>
-				<label class="question">Do you like Game of Thrones?</label>
+				<label class="question">Do you like beer?</label>
 				<select class="form-control" id="q6">
 				 	<option>1</option>
 				 	<option>2</option>
@@ -87,7 +87,7 @@
 			</div>
 			<div class="form-group">
 				<label class="questionTitle" for="q7">Question Seven</label><br>
-				<label class="question">Do you like Game of Thrones?</label>
+				<label class="question">Do you like traveling?</label>
 				<select class="form-control" id="q7">
 				 	<option>1</option>
 				 	<option>2</option>
@@ -98,7 +98,7 @@
 			</div>
 			<div class="form-group">
 				<label class="questionTitle" for="q8">Question Eight</label><br>
-				<label class="question">Do you like Game of Thrones?</label>
+				<label class="question">Do you like coffee?</label>
 				<select class="form-control" id="q8">
 				 	<option>1</option>
 				 	<option>2</option>
@@ -109,7 +109,7 @@
 			</div>
 			<div class="form-group">
 				<label class="questionTitle" for="q9">Question Nine</label><br>
-				<label class="question">Do you like Game of Thrones?</label>
+				<label class="question">Do you like pizza?</label>
 				<select class="form-control" id="q9">
 				 	<option>1</option>
 				 	<option>2</option>
@@ -120,7 +120,7 @@
 			</div>
 			<div class="form-group">
 				<label class="questionTitle" for="q10">Question Ten</label><br>
-				<label class="question">Do you like Game of Thrones?</label>
+				<label class="question">Do you like hamburgers?</label>
 				<select class="form-control" id="q10">
 				 	<option>1</option>
 				 	<option>2</option>
@@ -137,5 +137,42 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+<script>
+	$('.btn').on('click', function() {
+		event.preventDefault();
+		var newFriend = {
+			name: $('#name').val().trim(),
+			photo: $('#photo').val().trim(),
+			scores: [
+				$('#q1').val().trim(),
+				$('#q2').val().trim(),
+				$('#q3').val().trim(),
+				$('#q4').val().trim(),
+				$('#q5').val().trim(),
+				$('#q6').val().trim(),
+				$('#q7').val().trim(),
+				$('#q8').val().trim(),
+				$('#q9').val().trim(),
+				$('#q10').val().trim()
+			]
+		}
+		console.log(newFriend);
+
+		var currentUrl = window.location.origin;
+
+		$.post(currentUrl + '/api/friends', newFriend, function(data) {
+			$('#q1').val('');
+			$('#q2').val('');
+			$('#q3').val('');
+			$('#q4').val('');
+			$('#q5').val('');
+			$('#q6').val('');
+			$('#q7').val('');
+			$('#q8').val('');
+			$('#q9').val('');
+			$('#q10').val('');
+		});
+	});
+</script>
 </body>
 </html>
