@@ -14,6 +14,22 @@ var friends = [
         4,
         5
     ]
+  },
+  {
+    "name":"Ryan",
+    "photo":"https://scontent.fphl1-2.fna.fbcdn.net/v/t1.0-9/13417707_10154281113202990_3763438953850511982_n.jpg?oh=e967b52eb4f88dc5257b5ba01fdb2ed9&oe=5A1C8400",
+    "scores":[
+        4,
+        2,
+        3,
+        2,
+        3,
+        5,
+        4,
+        1,
+        5,
+        4
+    ]
   }
 ];
 

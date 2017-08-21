@@ -176,11 +176,18 @@
 	function getFriends() {
 		$.ajax({ url: currentUrl + "/api/friends", method: "GET" })
 		.done(function(friends) {
-			var results = [];
-			for(i = 0; i < friends[1].scores.length; i++) {
-				results.push(Math.abs(friends[0].scores[i] - friends[1].scores[i]));
-			};
-			console.log(results.reduce(getSum));
+			var diffResults = [];
+			var sums = [];
+			var user = friends.length - 1;
+			for(x = 0; x < friends.length-1; x++) {
+				for(i = 0; i < friends[1].scores.length; i++) {
+					diffResults.push(Math.abs(friends[x].scores[i] - friends[user].scores[i]));
+				};
+				sums.push(diffResults.reduce(getSum));
+				diffResults = [];
+			}
+			console.log(sums);
+
 		})
 	}
 
