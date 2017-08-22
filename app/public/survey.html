@@ -5,9 +5,14 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 <body>
-	<div class="container">
-		<h1>Survey Questions</h1>
-		<form class="container">
+	<div class="container" style="margin-top: 20px">
+		<h1 style="float: left;">Friend Finder Survey</h1>
+		<div class="links" style="float: right; margin: 8px 10px 0 0;">
+			<a href="/api/friends">API Friends List</a>
+			|
+			<a href="https://github.com/gildonkirk/friend-finder">GitHub Repo</a>
+		</div>	
+		<form class="container" style="clear: both;">
 			<div class="form-group">
 				<label for="name">Name</label>
 				<input type="text" class="form-control" id="name" placeholder="Enter name">
@@ -16,11 +21,8 @@
 				<label for="photo">Link to Photo</label>
 				<input type="text" class="form-control" id="photo" placeholder="Enter link">
 			</div>
-			<div class="instructions">
-				<h2 id="instructionsHeader">When done, we will find the best friend for you based on your answers!</h2>
-			</div>
 			<div class="form-group">
-				<label class="questionTitle" for="q1">Question One</label><br>
+				<label class="questionTitle" for="q1" style="font-weight: bold;">Question One</label><br>
 				<label class="question">Do you like Game of Thrones?</label>
 				<select class="form-control" id="q1">
 				 	<option>1</option>
@@ -31,7 +33,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label class="questionTitle" for="q2">Question Two</label><br>
+				<label class="questionTitle" for="q2" style="font-weight: bold;">Question Two</label><br>
 				<label class="question">Do you like comic books?</label>
 				<select class="form-control" id="q2">
 				 	<option>1</option>
@@ -42,7 +44,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label class="questionTitle" for="q3">Question Three</label><br>
+				<label class="questionTitle" for="q3" style="font-weight: bold;">Question Three</label><br>
 				<label class="question">Do you like video games?</label>
 				<select class="form-control" id="q3">
 				 	<option>1</option>
@@ -53,7 +55,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label class="questionTitle" for="q4">Question Four</label><br>
+				<label class="questionTitle" for="q4" style="font-weight: bold;">Question Four</label><br>
 				<label class="question">Do you like movies?</label>
 				<select class="form-control" id="q4">
 				 	<option>1</option>
@@ -64,7 +66,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label class="questionTitle" for="q5">Question Five</label><br>
+				<label class="questionTitle" for="q5" style="font-weight: bold;">Question Five</label><br>
 				<label class="question">Do you like music?</label>
 				<select class="form-control" id="q5">
 				 	<option>1</option>
@@ -75,7 +77,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label class="questionTitle" for="q6">Question Six</label><br>
+				<label class="questionTitle" for="q6" style="font-weight: bold;">Question Six</label><br>
 				<label class="question">Do you like beer?</label>
 				<select class="form-control" id="q6">
 				 	<option>1</option>
@@ -86,7 +88,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label class="questionTitle" for="q7">Question Seven</label><br>
+				<label class="questionTitle" for="q7" style="font-weight: bold;">Question Seven</label><br>
 				<label class="question">Do you like traveling?</label>
 				<select class="form-control" id="q7">
 				 	<option>1</option>
@@ -97,7 +99,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label class="questionTitle" for="q8">Question Eight</label><br>
+				<label class="questionTitle" for="q8" style="font-weight: bold;">Question Eight</label><br>
 				<label class="question">Do you like coffee?</label>
 				<select class="form-control" id="q8">
 				 	<option>1</option>
@@ -108,7 +110,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label class="questionTitle" for="q9">Question Nine</label><br>
+				<label class="questionTitle" for="q9" style="font-weight: bold;">Question Nine</label><br>
 				<label class="question">Do you like pizza?</label>
 				<select class="form-control" id="q9">
 				 	<option>1</option>
@@ -119,7 +121,7 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label class="questionTitle" for="q10">Question Ten</label><br>
+				<label class="questionTitle" for="q10" style="font-weight: bold;">Question Ten</label><br>
 				<label class="question">Do you like hamburgers?</label>
 				<select class="form-control" id="q10">
 				 	<option>1</option>
@@ -130,7 +132,7 @@
 				</select>
 			</div>
 			<button type="submit" class="btn btn-primary btnSubmit" data-toggle="modal" data-target="#exampleModal">Submit</button>
-		</form>
+		</form>	
 		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -144,11 +146,20 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="card text-center" style="margin: 20px 0 0 0">
+			<div class="card-body">
+			<div class="links">
+				<a href="/api/friends">API Friends List</a>
+				|
+				<a href="https://github.com/gildonkirk/friend-finder">GitHub Repo</a>
+			</div>
+				<p class="card-text">&copy Gildon Kirk</p>
+			</div>
 	</div>
 
 <script
