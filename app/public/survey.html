@@ -191,10 +191,19 @@
 			}
 			// take these sums and figure out which is smallest, that becomes the users match
 			console.log(sums);
-			var bestMatch = Array.min(sums);
-			console.log(bestMatch);
+			var index = 0;
+			var value = sums[0];
+			for(i = 0; i < sums.length; i++) {
+				if(sums[i] < value) {
+					value = sums[i];
+					index = i;
+					console.log(value);
+					console.log(index);
+				}
+			}
+			console.log(friends[index].name);
 		})
-	}
+	};
 
 	Array.min = function(array) {
 		return Math.min.apply(Math, array);
@@ -203,6 +212,10 @@
 	function getSum(total, num) {
 		return total + num;
 	};
+
+	function getBestMatch() {
+
+	}
 
 </script>
 </body>
