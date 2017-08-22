@@ -141,21 +141,24 @@
 	var currentUrl = window.location.origin;
 	$('.btn').on('click', function() {
 		event.preventDefault();
+		var scoresArray = [
+			$('#q1').val().trim(),
+			$('#q2').val().trim(),
+			$('#q3').val().trim(),
+			$('#q4').val().trim(),
+			$('#q5').val().trim(),
+			$('#q6').val().trim(),
+			$('#q7').val().trim(),
+			$('#q8').val().trim(),
+			$('#q9').val().trim(),
+			$('#q10').val().trim()
+		];
+		var integerArray = scoresArray.map(Number);
+		// need to parsInt these values
 		var newFriend = {
 			name: $('#name').val().trim(),
 			photo: $('#photo').val().trim(),
-			scores: [
-				$('#q1').val().trim(),
-				$('#q2').val().trim(),
-				$('#q3').val().trim(),
-				$('#q4').val().trim(),
-				$('#q5').val().trim(),
-				$('#q6').val().trim(),
-				$('#q7').val().trim(),
-				$('#q8').val().trim(),
-				$('#q9').val().trim(),
-				$('#q10').val().trim()
-			]
+			scores: integerArray
 		}
 		console.log(newFriend);
 
@@ -186,10 +189,16 @@
 				sums.push(diffResults.reduce(getSum));
 				diffResults = [];
 			}
+			// take these sums and figure out which is smallest, that becomes the users match
 			console.log(sums);
-
+			var bestMatch = Array.min(sums);
+			console.log(bestMatch);
 		})
 	}
+
+	Array.min = function(array) {
+		return Math.min.apply(Math, array);
+	};
 
 	function getSum(total, num) {
 		return total + num;
